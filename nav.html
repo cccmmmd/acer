@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acer 要追夢就玩大一點</title>
+</head>
+<body>
+    <div class="navbg">
+<img src="img/navbg.gif" usemap="#nav_btns" style="position: absolute; width: auto; height: auto">
+<div class="hover">
+    <div class="nav1_h" onclick="outlink('index');"><img src="img/nav1_h.gif"></div>
+    <div class="nav2_h" onclick="outlink('product');"><img src="img/nav2_h.gif"></div> 
+    <div class="nav3_h" onclick="outlink('login');"><img src="img/nav3_h.gif"></div> 
+    <div class="nav4_h" onclick="outlink('rule');"><img src="img/nav4_h.gif"></div> 
+    <div class="nav5_h" onclick="outlink('winner');" ><img src="img/nav5_h.gif"></div>             
+</div>
+<map name="nav_btns" id="nav_btns">
+    <area shape="polygon" coords="140,0,278,0,244,64,140,64" href="index.html">
+    <area shape="polygon" coords="278,0,444,0,412,64,244,64" href="product.html">
+    <area shape="polygon" coords="444,0,570,0,542,64,412,64" href="login.html">
+    <area shape="polygon" coords="570,0,696,0,665,64,542,64" href="rule.html">
+    <area shape="polygon" coords="696,0,800,0,800,64,665,64" nohref="nohref">
+</map>
+<div class="logo" onclick="outlink('official');"></div>
+
+</div>
+<div class="intel">
+    <span>Acer推薦使用Windows.</span>
+    <div class="intel_logo"><img src="img/intel_logo.png"></div>
+</div>
+</body>
+<script type="text/javascript">
+    function navf(){
+        var _s = this;
+    this.init = function(){
+        $('map area[shape="polygon"],.hover div').each(function(){
+             _s.hovera($(this));
+        });
+    }
+    this.hovera = function(obj){
+        var _index = obj.index()+1;
+        obj.hover(function(){
+            $('.nav'+_index+'_h').show();
+        },function(){
+            $('.nav'+_index+'_h').hide();
+        })
+    }
+}
+var _navf = new navf();
+_navf.init();
+</script>
+</html>
+
+
